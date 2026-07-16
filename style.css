@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Georgia',serif;
+
+    background:linear-gradient(
+        135deg,
+        #F7F3EB,
+        #E8DCC8,
+        #D6C2A1
+    );
+
+    color:#4B382A;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.container {
+    max-width: 700px;
+    padding: 30px;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:80px;
+}
+
+p {
+    font-size: 1.2rem;
+    color:#5C4033;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+button {
+    background:#C69C72;
+    color: #1f2937;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button{
+    background:#8B5E3C;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+/* ===== Birthday Cake ===== */
+
+.cake {
+    width: 220px;
+    height: 120px;
+    background: #E89EB8;
+    border-radius: 12px;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cake::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 220px;
+    height: 20px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.candle {
+    width: 14px;
+    height: 55px;
+    background: white;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.flame {
+    width: 18px;
+    height: 24px;
+    background: gold;
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker .5s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.15);
+        opacity: .75;
+    }
+}
+.hidden{
+    display:none;
+}
+
+#letter{
+    margin-top:40px;
+    display:none;
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s;
+}
+
+#letter.show{
+    display:block;
+    opacity:1;
+    transform:translateY(0);
+}
+
+.letter-card{
+    background:white;
+    color:#333;
+    padding:30px;
+    border-radius:20px;
+    max-width:600px;
+    margin:auto;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.letter-card h2{
+    margin-bottom:20px;
+}
+
+#message{
+    line-height:1.8;
+    white-space:pre-line;
+    color:#3d2c1e;
+    font-size:18px;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.flame.out {
+    animation: blowOut 0.4s forwards;
+}
+
+@keyframes blowOut {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(0.6);
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+}
+.signature{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #d6c2a1;
+    text-align:center;
+    opacity:0;
+    transition:1s;
+}
+
+.signature.show{
+    opacity:1;
+}
+
+.date{
+    font-size:20px;
+    color:#5C4033;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.quote{
+    font-style:italic;
+    color:#8B6A4E;
+    margin-bottom:15px;
+}
+
+.made{
+    font-size:14px;
+    color:#A88B6A;
+}
